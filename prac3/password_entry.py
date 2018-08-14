@@ -4,14 +4,26 @@ Magnus Persson
 def main():
 
     valid = False
-    MIN_LENGTH = 7
-    while not valid:
-        user_password = input('Password')
 
-        if len(user_password) >= MIN_LENGTH:
-            valid = True
-            print("ALL GOOD")
-        else:
-            print("NOT ENOUGH LENGTH")
+    while not valid:
+        password = get_password()
+        valid = check_password(password)
+
+
+
+def get_password():
+    user_password = input('Password')
+    return user_password
+
+def check_password(password):
+    MIN_LENGTH = 7
+
+    if len(password) >= MIN_LENGTH:
+        print("ALL GOOD")
+        return True
+    else:
+        print("NOT ENOUGH LENGTH")
+        return False
+
 
 main()
