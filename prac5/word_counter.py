@@ -10,6 +10,6 @@ for word in words:
 
 length = max(len(word) for word in words)
 
-for word in words_count:
+for word in sorted(words_count.keys()):
     print("{0:{2}s}: {1}".format(word, words_count[word], length))
 
